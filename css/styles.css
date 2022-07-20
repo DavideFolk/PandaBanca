@@ -1,0 +1,160 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+p {
+    font-size: 1.4rem;
+}
+
+.section-2 {
+    background-color: #dedae7;
+    padding: 130px 50px 80px;
+    text-align: center;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-item {
+    padding: 0 15px;
+}
+
+.img-1 {
+    height: 500px;
+    transform: rotate(30deg);
+    position: absolute;
+    right: 10%;
+}
+
+.testo {
+    font-size: 2rem;
+    padding: 0 50px;
+}
+
+.btn {
+    margin-right: 20px;
+}
+
+#features {
+    padding: 5% 15% 7%;
+    background-color: #9CB4CC;
+    position: relative;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 1% 4%;
+}
+
+.icon {
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.icon:hover {
+    color: #dedae7;
+}
+
+#recensioni {
+    background-color: #dedae7;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.img-recensioni-1 {
+    position: absolute;
+    opacity: 0.3;
+    right: 70%;
+    top: 120px;
+}
+
+.img-recensioni-2 {
+    transform: rotate(150deg);
+    position: absolute;
+    opacity: 0.3;
+    right: 70%;
+    top: -120px;
+}
+
+.img-recensioni-3 {
+    height: 50%;
+    position: absolute;
+    opacity: 0.3;
+    right: 20%;
+    top: 50%;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/271/271220.png");
+}
+
+
+.carousel-control-next-icon {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/271/271228.png");
+}
+
+.carousel-item {
+    padding: 7% 15%;
+}
+
+.img-recensioni {
+    height: 70px;
+    margin-left: 20px;
+}
+
+#prezzi {
+    padding: 100px;
+    text-align: center;
+    background-color: #9CB4CC;
+}
+
+.pricing-col {
+    padding: 3% 2%;
+}
+
+@media (max-width: 1100px) {
+    .img-1 {
+        position: static;
+        transform: rotate(0);
+        margin-top: 40px;
+    }
+
+    .img-recensioni-1 {
+        top: 100px;
+    }
+}
+
+@media (max-width: 900px) {
+    .img-recensioni-3 {
+        right: -15%;
+    }
+}
+
+#footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 5% 15%;
+    font-size: 1.5rem;
+}
+
+.img-footer {
+    padding: 2% 1%;
+}
+
+.text-copyright {
+    font-size: 1rem;
+}
