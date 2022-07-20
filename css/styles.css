@@ -99,12 +99,12 @@ p {
 }
 
 .carousel-control-prev-icon {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/271/271220.png");
+    background-image: url("../image/left-arrow.png");
 }
 
 
 .carousel-control-next-icon {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/271/271228.png");
+    background-image: url("../image/right-arrow.png");
 }
 
 .carousel-item {
