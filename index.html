@@ -35,14 +35,21 @@
 					<li class="nav-item">
 						<a class="nav-link active" href="#footer">Contatti</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="#">LogIn</a>
+					<li class="nav-item" id="loginBarra">
+						<a class="nav-link active" href="" data-bs-toggle="modal" data-bs-target="#loginModal">LogIn</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div class="container-fluid">
+
+	<div class="text-center hidden" id="spinnerLoading">
+		<div class="spinner-border" role="status">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+
+	<div class="container-fluid homepage">
 		<div class="row section-2">
 			<div class="col-lg-6">
 				<h1>Il conto facile e sicuro</h1>
@@ -66,7 +73,7 @@
 		</div>
 	</div>
 
-	<section id="features">
+	<section id="features" class="homepage">
 		<div class="row">
 			<div class="col-lg-4 feature-box">
 				<i class="fa-solid fa-circle-check fa-4x icon"></i>
@@ -92,7 +99,7 @@
 		</div>
 	</section>
 
-	<section id="recensioni">
+	<section id="recensioni" class="homepage">
 		<div id="recenzioni-carosello" class="carousel slide" data-bs-ride="false">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
@@ -127,7 +134,7 @@
 		</div>
 	</section>
 
-	<section id="prezzi">
+	<section id="prezzi" class="homepage">
 		<h3>Un piano pensato per i tuoi bisogni</h3>
 		<p>Tutto quello che ti serve, quando vuoi.</p>
 
@@ -144,7 +151,8 @@
 							<li>App per operazioni bancarie</li>
 							<li>Chat sempre disponibile per aiutarti</li>
 						</ul>
-						<button type="button" class="w-100 btn btn-lg btn-outline-primary">Iscriviti</button>
+						<button type="button" class="w-100 btn btn-lg btn-outline-primary" data-bs-toggle="modal"
+							data-bs-target="#iscrModal">Iscriviti</button>
 					</div>
 				</div>
 			</div>
@@ -161,7 +169,8 @@
 							<li>Investimenti da app</li>
 							<li>Call center 24/24</li>
 						</ul>
-						<button type="button" class="w-100 btn btn-lg btn-dark">Iscriviti</button>
+						<button type="button" class="w-100 btn btn-lg btn-dark" data-bs-toggle="modal"
+							data-bs-target="#iscrModal">Iscriviti</button>
 					</div>
 				</div>
 			</div>
@@ -178,12 +187,155 @@
 							<li>Cashback sulle tue spese</li>
 							<li>Interessi annuali sul capitale</li>
 						</ul>
-						<button type="button" class="w-100 btn btn-lg btn-dark">Iscriviti</button>
+						<button type="button" class="w-100 btn btn-lg btn-dark" data-bs-toggle="modal"
+							data-bs-target="#iscrModal">Iscriviti</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<!-- Modal login -->
+	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Account LogIn</h1>
+				</div>
+				<div class="img-modal">
+					<img class="img-modal" src="image/panda.png" alt="">
+				</div>
+				<div class="modal-body div-form">
+					<form id="formLogin">
+						<div class="mb-3">
+							<input type="text" id="username" class="form-control form-control-lg" id="recipient-name"
+								placeholder="Username" required>
+							<input type="text" id="password" class="form-control form-control-lg" id="recipient-name"
+								placeholder="Password" required>
+							<br>
+							<p id="errorText"></p>
+						</div>
+						<div>
+							<p class="text-small">Non hai un conto con noi? <a href="" data-bs-toggle="modal"
+									data-bs-target="#iscrModal">Aprilo ora!</a></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="btnClose" class="btn btn-secondary btn-modal"
+								data-bs-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary btn-modal" id="btnLogin">LogIn</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal istrizione -->
+
+	<div class="modal fade" id="iscrModal" tabindex="-1" aria-labelledby="iscrModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Entra nel nostro mondo!</h1>
+				</div>
+				<div class="modal-body div-form">
+					<form class="row g-3" id="formIscrizione">
+						<div class="col-md-6">
+							<label for="inputNome" class="form-label">Nome</label>
+							<input type="text" class="form-control" id="inputNome" placeholder="Nome" required>
+						</div>
+						<div class="col-md-6">
+							<label for="inputCognome" class="form-label">Cognome</label>
+							<input type="text" class="form-control" id="inputCognome" placeholder="Cognome" required>
+						</div>
+						<div class="col-12">
+							<label for="inputEmail" class="form-label">E-mail</label>
+							<input type="email" class="form-control" id="inputEmail" placeholder="Indirizzo E-mail"
+								required>
+						</div>
+						<div class="col-md-6">
+							<label for="inputUserName" class="form-label">Username</label>
+							<input type="text" class="form-control" id="inputUserName" placeholder="Username" required>
+						</div>
+						<div class="col-md-6">
+							<label for="inputPassword" class="form-label">Password</label>
+							<input type="text" class="form-control" id="inputPassword" placeholder="Password" required>
+						</div>
+						<div class="col-md-6">
+							<label for="inputPiano" class="form-label">Piano</label>
+							<select id="inputPiano" class="form-select">
+								<option selected>Base</option>
+								<option>Classic</option>
+								<option>Premium</option>
+							</select>
+						</div>
+
+						<div class="form-check col-md-7">
+							<input class="form-check-input" type="checkbox" id="gridCheck" required>
+							<label class="form-check-label" for="gridCheck">
+								Accetto il contratto
+							</label>
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" id="btnCloseIscrizione" class="btn btn-secondary"
+								data-bs-dismiss="modal">Chiudi</button>
+							<button type="submit" class="btn btn-primary" id="btnIscrizione">Apri conto</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- homeLogin -->
+
+	<div class="container px-4 my-5 py-5 hidden" id="homeLogin">
+		<h2 class="pb-2 border-bottom" id="titleName">Ciao, </h2>
+		<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+			<div class="col d-flex align-items-start">
+				<div>
+					<img src="image/piggy-bank.png" alt="" height="40px" class="d-inline-block align-text-top me-2"
+						style="margin-bottom: 5px" />
+				</div>
+				<div>
+					<h3 class="fs-2" id="totaleConto">1.0000</i></h3>
+					<p>Sul tuo conto attualmente</p>
+					<a href="#" class="btn btn-primary">
+						Guarda le spese
+					</a>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div>
+					<img src="image/profits.png" alt="" height="40px" class="d-inline-block align-text-top me-2"
+						style="margin-bottom: 5px" />
+				</div>
+				<div>
+					<h3 class="fs-2" id="totaleInv">300</h3>
+					<p>Le tue azioni e obbligazioni</p>
+					<a href="#" class="btn btn-primary">
+						Guarda investimenti
+					</a>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<div>
+					<img src="image/bitcoin.png" alt="" height="40px" class="d-inline-block align-text-top me-2"
+						style="margin-bottom: 5px" />
+				</div>
+				<div>
+					<h3 class="fs-2" id="totaleCrypto"></h3>
+					<p>Valore delle tue cryptovalute</p>
+					<a href="#" class="btn btn-primary">
+						Guarda Crypto
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 	<footer id="footer">
 		<i class="fa-brands fa-twitter img-footer"></i>
@@ -196,6 +348,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
 		crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="index.js"></script>
 </body>
 
 </html>

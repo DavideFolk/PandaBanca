@@ -33,6 +33,14 @@ p {
     padding: 0 15px;
 }
 
+.hidden {
+    display: none;
+}
+
+.text-small {
+    font-size: 1rem;
+}
+
 .img-1 {
     height: 500px;
     transform: rotate(30deg);
@@ -111,6 +119,13 @@ p {
     padding: 7% 15%;
 }
 
+.spinner-border {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    width: 4rem;
+    height: 4rem;
+}
+
 .img-recensioni {
     height: 70px;
     margin-left: 20px;
@@ -126,11 +141,12 @@ p {
     padding: 3% 2%;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
     .img-1 {
         position: static;
+        height: 300px;
         transform: rotate(0);
-        margin-top: 40px;
+        margin-top: 20px;
     }
 
     .img-recensioni-1 {
@@ -157,4 +173,46 @@ p {
 
 .text-copyright {
     font-size: 1rem;
+}
+
+/* Modal */
+
+/* .modal-content {
+    background-color: #dedae7;
+} */
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.top {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.middle {
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+
+.bottom {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.img-modal {
+    text-align: center;
+    height: 60px;
+    margin: 10px 0 10px;
+}
+
+.btn-modal {
+    margin-top: 20px;
 }
