@@ -82,6 +82,25 @@ function renderHome() {
 	);
 }
 
+function iscrizione() {
+	let nome = $('#inputNome').val();
+	let cognome = $('#inputCognome').val();
+	let email = $('#inputEmail').val();
+	let username = $('#inputUserName').val();
+	let password = $('#inputPassword').val();
+	let piano = $('#inputPiano').val();
+	accountData[username] = {
+		nome: nome,
+		cognome: cognome,
+		password: password,
+		email: email,
+		piano: piano,
+	};
+	account.push(username);
+	$('#iscrModal').modal('toggle');
+	$('#modalOk').modal('toggle');
+}
+
 //Onclick modal login
 $('#btnLogin').click(function (e) {
 	let form = $('#formLogin');
@@ -104,7 +123,7 @@ $('#btnIscrizione').click(function (e) {
 	let form = $('#formIscrizione');
 	if (form[0].checkValidity()) {
 		e.preventDefault();
-		console.log('dati scritti');
+		iscrizione();
 	}
 });
 
@@ -113,6 +132,7 @@ $('#btnCloseIscrizione').click(function (e) {
 	$('#inputNome').val('');
 	$('#inputCognome').val('');
 	$('#inputEmail').val('');
+	$('#inputUserName').val('');
 	$('#inputPassword').val('');
 	$('#inputPiano').val('Base');
 	$('#gridCheck').prop('checked', false);
