@@ -1,3 +1,4 @@
+'use strict';
 //Dati account
 let account = ['davide'];
 
