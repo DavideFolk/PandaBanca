@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+
 body {
     font-family: 'Ubuntu', sans-serif;
 }
@@ -71,6 +73,7 @@ p {
 .icon {
     color: black;
     margin-bottom: 1rem;
+    font-size: 4rem;
 }
 
 .icon:hover {
@@ -215,4 +218,16 @@ p {
 
 .btn-modal {
     margin-top: 20px;
+}
+
+.bi-plus {
+    color: rgb(16, 154, 16);
+    margin: auto;
+    font-size: 3rem;
+}
+
+.bi-dash {
+    color: red;
+    margin: auto;
+    font-size: 3rem;
 }
